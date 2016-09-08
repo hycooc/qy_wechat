@@ -113,7 +113,7 @@ class Application extends Container
     {
         //循环注册服务
         foreach ($this->providers as $provider) {
-            $this->register($provider());
+            $this->register(new $provider());
         }
     }
 
