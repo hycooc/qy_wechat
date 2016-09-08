@@ -141,7 +141,7 @@ class MessageBuilder
             $content = $transformer->transform($this->message);
 
             $sendData = ['agentid ' => $this->agentid];
-            foreach (['toUser', 'toParty', 'toTag'] as $nameKey) {
+            foreach (['touser', 'toparty', 'totag'] as $nameKey) {
                 if (!empty($this->{$nameKey})) {
                     $sendData[$nameKey] = $this->{$nameKey};
                 }

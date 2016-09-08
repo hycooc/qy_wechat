@@ -17,7 +17,7 @@ use QyWeChat\Core\Http;
 use QyWeChat\Support\Log;
 use Symfony\Component\HttpFoundation\Request;
 
-class Appliacation extends Container
+class Application extends Container
 {
     //服务集合
     protected $providers = [

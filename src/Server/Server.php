@@ -13,7 +13,7 @@ use QyWeChat\Core\Exceptions\RuntimeException;
 use QyWeChat\Encryption\Encryptor;
 use QyWeChat\Message\AbstractMessage;
 use QyWeChat\Message\Raw as RawMessage;
-use EasyWeChat\Message\Text;
+use QyWeChat\Message\Text;
 use QyWeChat\Support\Collection;
 use QyWeChat\Support\Log;
 use QyWeChat\Support\XML;

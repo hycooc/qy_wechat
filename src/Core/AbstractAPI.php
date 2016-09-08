@@ -48,7 +48,7 @@ abstract class AbstractAPI
 
     /**
      * Return the http instance.
-     * @return \EasyWeChat\Core\Http
+     * @return \QyWeChat\Core\Http
      */
     public function getHttp()
     {
