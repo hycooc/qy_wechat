@@ -84,6 +84,8 @@ class MessageBuilder
     public function fromAgent($agentid)
     {
         $this->agentid = intval($agentid);
+
+        return $this;
     }
 
     /**

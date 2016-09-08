@@ -21,7 +21,8 @@ class Application extends Container
 {
     //服务集合
     protected $providers = [
-        ServiceProviders\ServerServiceProvider::class
+        ServiceProviders\ServerServiceProvider::class,
+        ServiceProviders\NoticeServiceProvider::class
     ];
 
     /**
