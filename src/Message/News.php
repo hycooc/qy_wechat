@@ -34,6 +34,6 @@ class News extends AbstractMessage
      * @var array
      */
     protected $aliases = [
-        'image' => 'picurl',
+        'image' => 'pic_url',
     ];
 }

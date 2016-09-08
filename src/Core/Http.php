@@ -111,15 +111,11 @@ class Http
     }
 
     /**
-     * Upload file.
-     *
-     * @param string $url
-     * @param array  $files
-     * @param array  $form
-     *
+     * @param $url
+     * @param array $files
+     * @param array $form
+     * @param array $queries
      * @return array|bool
-     *
-     * @throws HttpException
      */
     public function upload($url, array $files = [], array $form = [], array $queries = [])
     {
@@ -229,7 +225,7 @@ class Http
      *
      * @return mixed
      *
-     * @throws \EasyWeChat\Core\Exceptions\HttpException
+     * @throws \QyWeChat\Core\Exceptions\HttpException
      */
     public function parseJSON($body)
     {

@@ -19,16 +19,16 @@ use QyWeChat\Core\Exceptions\HttpException;
 class AccessToken
 {
     /**
-     * App ID.
+     * 企业Id
      * @var string
      */
-    protected $appId;
+    protected $corpid;
 
     /**
-     * App secret.
+     * 管理组的凭证密钥
      * @var string
      */
-    protected $secret;
+    protected $corpsecret;
 
     /**
      * Cache.
@@ -52,21 +52,21 @@ class AccessToken
      * Cache key prefix.
      * @var string
      */
-    protected $prefix = 'easywechat.common.access_token.';
+    protected $prefix = 'qywechat.common.access_token.';
 
     // API
-    const API_TOKEN_GET = 'https://api.weixin.qq.com/cgi-bin/token';
+    const API_TOKEN_GET = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken';
 
     /**
      * Constructor.
-     * @param string $appId
-     * @param string $secret
+     * @param string $corpid
+     * @param string $corpsecret
      * @param \Doctrine\Common\Cache\Cache $cache
      */
-    public function __construct($appId, $secret, Cache $cache = null)
+    public function __construct($corpid, $corpsecret, Cache $cache = null)
     {
-        $this->appId  = $appId;
-        $this->secret = $secret;
+        $this->corpid  = $corpid;
+        $this->corpsecret = $corpsecret;
         $this->cache  = $cache;
     }
 
@@ -77,7 +77,7 @@ class AccessToken
      */
     public function getToken($forceRefresh = false)
     {
-        $cacheKey = $this->prefix . $this->appId;
+        $cacheKey = $this->prefix . $this->corpid;
 
         $cached = $this->getCache()->fetch($cacheKey);
 
@@ -94,21 +94,21 @@ class AccessToken
     }
 
     /**
-     * Return the app id.
+     * Return the corpid.
      * @return string
      */
-    public function getAppId()
+    public function getCorpid()
     {
-        return $this->appId;
+        return $this->corpid;
     }
 
     /**
-     * Return the secret.
+     * Return the corpsecret.
      * @return string
      */
-    public function getSecret()
+    public function getCorpsecret()
     {
-        return $this->secret;
+        return $this->$corpsecret;
     }
 
     /**
@@ -164,15 +164,14 @@ class AccessToken
 
     /**
      * Get the access token from WeChat server.
-     * @throws \EasyWeChat\Core\Exceptions\HttpException
+     * @throws \QyWeChat\Core\Exceptions\HttpException
      * @return array|bool
      */
     public function getTokenFromServer()
     {
         $params = [
-            'appid'      => $this->appId,
-            'secret'     => $this->secret,
-            'grant_type' => 'client_credential',
+            'corpid'      => $this->corpid,
+            'corpsecret'     => $this->corpsecret,
         ];
 
         $http = $this->getHttp();
@@ -197,7 +196,7 @@ class AccessToken
 
     /**
      * Set the http instance.
-     * @param \EasyWeChat\Core\Http $http
+     * @param \QyWeChat\Core\Http $http
      * @return $this
      */
     public function setHttp(Http $http)

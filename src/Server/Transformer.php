@@ -34,7 +34,7 @@ class Transformer
             $class = get_class($message);
         }
 
-        $handle = 'transform' . substr($class, strlen('EasyWeChat\Message\\'));
+        $handle = 'transform' . substr($class, strlen('QyWeChat\Message\\'));
 
         return method_exists($this, $handle) ? $this->$handle($message) : [];
     }
