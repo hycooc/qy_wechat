@@ -1,0 +1,37 @@
+{
+    "name": "hycooc/qy_wechat",
+    "description": "wechat qy SDK",
+    "license": "MIT",
+    "keywords": [
+        "wechat",
+        "weixin",
+        "qy",
+        "weixin-sdk"
+    ],
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Hycooc",
+            "email": "baoerge123@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "ext-openssl": "*",
+        "pimple/pimple": "~3.0",
+        "monolog/monolog": "^1.17",
+        "overtrue/socialite": ">=1.0.7",
+        "doctrine/cache": "~1.4",
+        "guzzlehttp/guzzle": "~6.2.1",
+        "symfony/http-foundation": "~2.6|~2.7|~2.8|~3.0",
+        "symfony/psr-http-message-bridge": "0.2"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "QyWeChat\\": "src/"
+        },
+        "files": [
+        ]
+    }
+}
