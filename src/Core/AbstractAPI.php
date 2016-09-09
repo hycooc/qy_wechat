@@ -120,8 +120,7 @@ abstract class AbstractAPI
     {
         // log
         $this->http->addMiddleware($this->logMiddleware());
-        // retry
-        $this->http->addMiddleware($this->retryMiddleware());
+
         // access token
         $this->http->addMiddleware($this->accessTokenMiddleware());
     }
@@ -157,37 +156,6 @@ abstract class AbstractAPI
         return Middleware::tap(function (RequestInterface $request, $options) {
             Log::debug("Request: {$request->getMethod()} {$request->getUri()} " . json_encode($options));
             Log::debug('Request headers:' . json_encode($request->getHeaders()));
-        });
-    }
-
-    /**
-     * Return retry middleware.
-     * @return \Closure
-     */
-    protected function retryMiddleware()
-    {
-        return Middleware::retry(function (
-            $retries,
-            RequestInterface $request,
-            ResponseInterface $response = null
-        ) {
-            // Limit the number of retries to 2
-            if ($retries <= 2 && $response && $body = $response->getBody()) {
-                // Retry on server errors
-                if (stripos($body, 'errcode') && (stripos($body, '40001') || stripos($body, '42001'))) {
-                    $field = $this->accessToken->getQueryName();
-                    $token = $this->accessToken->getToken(true);
-
-                    $request = $request->withUri($newUri = Uri::withQueryValue($request->getUri(), $field, $token));
-
-                    Log::debug("Retry with Request Token: {$token}");
-                    Log::debug("Retry with Request Uri: {$newUri}");
-
-                    return true;
-                }
-            }
-
-            return false;
         });
     }
 

@@ -46,7 +46,9 @@ class Transformer
     public function transformText(AbstractMessage $message)
     {
         return [
-            'Content' => $message->get('content'),
+            'text' => [
+                'content' => $message->get('content')
+            ]
         ];
     }
 
@@ -57,8 +59,8 @@ class Transformer
     public function transformImage(AbstractMessage $message)
     {
         return [
-            'Image' => [
-                'MediaId' => $message->get('media_id'),
+            'image' => [
+                'media_id' => $message->get('media_id'),
             ],
         ];
     }
@@ -70,10 +72,10 @@ class Transformer
     public function transformVideo(AbstractMessage $message)
     {
         $response = [
-            'Video' => [
-                'MediaId'     => $message->get('media_id'),
-                'Title'       => $message->get('title'),
-                'Description' => $message->get('description'),
+            'video' => [
+                'media_id' => $message->get('media_id'),
+                'title' => $message->get('title'),
+                'description' => $message->get('description'),
             ],
         ];
 
@@ -87,8 +89,8 @@ class Transformer
     public function transformVoice(AbstractMessage $message)
     {
         return [
-            'Voice' => [
-                'MediaId' => $message->get('media_id'),
+            'voice' => [
+                'media_id' => $message->get('media_id'),
             ],
         ];
     }
@@ -126,16 +128,17 @@ class Transformer
 
         foreach ($news as $item) {
             $articles[] = [
-                'Title'       => $item->get('title'),
-                'Description' => $item->get('description'),
-                'Url'         => $item->get('url'),
-                'PicUrl'      => $item->get('pic_url'),
+                'title' => $item->get('title'),
+                'description' => $item->get('description'),
+                'url' => $item->get('url'),
+                'picurl' => $item->get('pic_url'),
             ];
         }
 
         return [
-            'ArticleCount' => count($articles),
-            'Articles'     => $articles,
+            'news' => [
+                'articles' => $articles
+            ],
         ];
     }
 }

@@ -142,13 +142,14 @@ class MessageBuilder
         } else {
             $content = $transformer->transform($this->message);
 
-            $sendData = ['agentid ' => $this->agentid];
+            $sendData = ['agentid' => $this->agentid];
             foreach (['touser', 'toparty', 'totag'] as $nameKey) {
                 if (!empty($this->{$nameKey})) {
                     $sendData[$nameKey] = $this->{$nameKey};
                 }
             }
-            $message = array_merge($sendData, $content);
+
+            $message = array_merge($sendData, $content, ['msgtype' => is_array($this->message) ? 'news' : $this->message->getType()]);
         }
 
         return $this->notice->send($message);

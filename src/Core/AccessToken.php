@@ -108,7 +108,7 @@ class AccessToken
      */
     public function getCorpsecret()
     {
-        return $this->$corpsecret;
+        return $this->corpsecret;
     }
 
     /**

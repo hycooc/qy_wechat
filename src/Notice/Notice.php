@@ -38,6 +38,10 @@ class Notice extends AbstractAPI
      */
     public function send($message)
     {
-        return $this->parseJSON('json', [self::API_MESSAGE_SEND, $message]);
+        //获取accessToken
+        $token = $this->accessToken->getToken();
+        $url = sprintf('%s?access_token=%s', self::API_MESSAGE_SEND, $token);
+
+        return $this->parseJSON('json', [$url, $message]);
     }
 }
