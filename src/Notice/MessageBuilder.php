@@ -6,13 +6,13 @@
  * Date: 16-9-9
  * Time: 上午2:35
  */
-namespace QyWeChat\Notice;
+namespace QyWechat\Notice;
 
-use QyWeChat\Core\Exceptions\InvalidArgumentException;
-use QyWeChat\Core\Exceptions\RuntimeException;
-use QyWeChat\Message\AbstractMessage;
-use QyWeChat\Message\Raw as RawMessage;
-use QyWeChat\Message\Text;
+use QyWechat\Core\Exceptions\InvalidArgumentException;
+use QyWechat\Core\Exceptions\RuntimeException;
+use QyWechat\Message\AbstractMessage;
+use QyWechat\Message\Raw as RawMessage;
+use QyWechat\Message\Text;
 
 /**
  * Class MessageBuilder.
@@ -21,7 +21,7 @@ class MessageBuilder
 {
     /**
      * Message to send.
-     * @var \QyWeChat\Message\AbstractMessage;
+     * @var \QyWechat\Message\AbstractMessage;
      */
     protected $message;
 
@@ -51,13 +51,13 @@ class MessageBuilder
 
     /**
      * Staff instance.
-     * @var \QyWeChat\Notice\Notice
+     * @var \QyWechat\Notice\Notice
      */
     protected $notice;
 
     /**
      * MessageBuilder constructor.
-     * @param \QyWeChat\Notice\Notice $notice
+     * @param \QyWechat\Notice\Notice $notice
      */
     public function __construct(Notice $notice)
     {
@@ -81,6 +81,11 @@ class MessageBuilder
         return $this;
     }
 
+    /**
+     * Set from agent id.
+     * @param $agentid
+     * @return $this
+     */
     public function fromAgent($agentid)
     {
         $this->agentid = intval($agentid);
