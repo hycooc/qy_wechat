@@ -29,7 +29,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "QyWeChat\\": "src/"
+            "QyWechat\\": "src/"
         },
         "files": [
         ]

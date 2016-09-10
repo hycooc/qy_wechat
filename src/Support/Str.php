@@ -6,9 +6,9 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWeChat\Support;
+namespace QyWechat\Support;
 
-use QyWeChat\Core\Exceptions\RuntimeException;
+use QyWechat\Core\Exceptions\RuntimeException;
 
 class Str
 {

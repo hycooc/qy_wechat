@@ -6,7 +6,7 @@
  * Date: 2016/9/8
  * Time: 14:55
  */
-namespace QyWeChat\Support;
+namespace QyWechat\Support;
 
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Handler\NullHandler;
@@ -79,7 +79,7 @@ class Log
      */
     private static function createDefaultLogger()
     {
-        $log = new Logger('QyWeChat');
+        $log = new Logger('QyWechat');
 
         if (defined('PHPUNIT_RUNNING')) {
             $log->pushHandler(new NullHandler());
