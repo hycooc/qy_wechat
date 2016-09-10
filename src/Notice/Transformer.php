@@ -96,24 +96,6 @@ class Transformer
     }
 
     /**
-     * @param AbstractMessage $message
-     * @return array
-     */
-    public function transformTransfer(AbstractMessage $message)
-    {
-        $response = [];
-
-        // 指定客服
-        if ($message->get('account')) {
-            $response['TransInfo'] = [
-                'KfAccount' => $message->get('account'),
-            ];
-        }
-
-        return $response;
-    }
-
-    /**
      * Transform news message.
      * @param array|\QyWeChat\Message\News $news
      * @return array
