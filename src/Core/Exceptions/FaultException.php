@@ -6,9 +6,9 @@
  * Date: 2016/9/8
  * Time: 14:55
  */
-namespace QyWeChat\Core\Exceptions;
+namespace QyWechat\Core\Exceptions;
 
-use QyWeChat\Core\Exception;
+use QyWechat\Core\Exception;
 
 /**
  * Class FaultException.
