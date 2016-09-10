@@ -5,18 +5,18 @@
  * Date: 16-9-9
  * Time: 上午12:19
  */
-namespace QyWeChat\Server;
+namespace QyWechat\Server;
 
-use QyWeChat\Core\Exceptions\FaultException;
-use QyWeChat\Core\Exceptions\InvalidArgumentException;
-use QyWeChat\Core\Exceptions\RuntimeException;
-use QyWeChat\Encryption\Encryptor;
-use QyWeChat\Message\AbstractMessage;
-use QyWeChat\Message\Raw as RawMessage;
-use QyWeChat\Message\Text;
-use QyWeChat\Support\Collection;
-use QyWeChat\Support\Log;
-use QyWeChat\Support\XML;
+use QyWechat\Core\Exceptions\FaultException;
+use QyWechat\Core\Exceptions\InvalidArgumentException;
+use QyWechat\Core\Exceptions\RuntimeException;
+use QyWechat\Encryption\Encryptor;
+use QyWechat\Message\AbstractMessage;
+use QyWechat\Message\Raw as RawMessage;
+use QyWechat\Message\Text;
+use QyWechat\Support\Collection;
+use QyWechat\Support\Log;
+use QyWechat\Support\XML;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -224,7 +224,7 @@ class Server
      *
      * @return string
      *
-     * @throws \QyWeChat\Core\Exceptions\InvalidArgumentException
+     * @throws \QyWechat\Core\Exceptions\InvalidArgumentException
      */
     protected function buildResponse($to, $from, $message)
     {
@@ -285,8 +285,8 @@ class Server
      *
      * @return array
      *
-     * @throws \QyWeChat\Core\Exceptions\RuntimeException
-     * @throws \QyWeChat\Server\BadRequestException
+     * @throws \QyWechat\Core\Exceptions\RuntimeException
+     * @throws \QyWechat\Server\BadRequestException
      */
     protected function handleRequest()
     {
@@ -379,8 +379,8 @@ class Server
      *
      * @param string|resource $content
      *
-     * @throws \QyWeChat\Core\Exceptions\RuntimeException
-     * @throws \QyWeChat\Encryption\EncryptionException
+     * @throws \QyWechat\Core\Exceptions\RuntimeException
+     * @throws \QyWechat\Encryption\EncryptionException
      *
      * @return array
      */
