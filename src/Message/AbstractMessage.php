@@ -6,9 +6,9 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWeChat\Message;
+namespace QyWechat\Message;
 
-use QyWeChat\Support\Attribute;
+use QyWechat\Support\Attribute;
 
 /**
  * Class AbstractMessage.

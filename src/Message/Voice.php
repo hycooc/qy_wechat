@@ -1,24 +1,19 @@
 <?php
-
 /**
  * Created by PhpStorm.
- * User: Administrator
- * Date: 16-9-9
- * Time: 上午12:20
+ * User: baoerge
+ * Date: 2016/9/10
+ * Time: 11:46
  */
 namespace QyWechat\Message;
 
-/**
- * Class Image.
- * @property string $media_id
- */
-class Image extends AbstractMessage
+class Voice extends AbstractMessage
 {
     /**
      * Message type.
      * @var string
      */
-    protected $type = 'image';
+    protected $type = 'voice';
 
     /**
      * Properties.
@@ -28,8 +23,8 @@ class Image extends AbstractMessage
 
     /**
      * Set media_id.
-     * @param string $mediaId
-     * @return Image
+     * @param $mediaId
+     * @return $this voice
      */
     public function media($mediaId)
     {
