@@ -6,11 +6,11 @@
  * Time: 上午4:31
  */
 
-namespace QyWeChat\Foundation\ServiceProviders;
+namespace QyWechat\Foundation\ServiceProviders;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use QyWeChat\Notice\Notice;
+use QyWechat\Notice\Notice;
 
 class NoticeServiceProvider implements ServiceProviderInterface
 {

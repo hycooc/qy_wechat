@@ -5,16 +5,16 @@
  * Date: 2016/9/8
  * Time: 14:55
  */
-namespace QyWeChat\Foundation;
+namespace QyWechat\Foundation;
 
 use Doctrine\Common\Cache\FilesystemCache;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Pimple\Container;
-use QyWeChat\Core\AccessToken;
-use QyWeChat\Core\Http;
-use QyWeChat\Support\Log;
+use QyWechat\Core\AccessToken;
+use QyWechat\Core\Http;
+use QyWechat\Support\Log;
 use Symfony\Component\HttpFoundation\Request;
 
 class Application extends Container
@@ -152,7 +152,7 @@ class Application extends Container
             return;
         }
 
-        $logger = new Logger('QyWeChat');
+        $logger = new Logger('QyWechat');
 
         if (!$this['config']['debug'] || defined('PHPUNIT_RUNNING')) {
             $logger->pushHandler(new NullHandler());
