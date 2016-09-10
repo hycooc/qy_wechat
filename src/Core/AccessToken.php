@@ -7,11 +7,11 @@
  * Time: 14:55
  */
 
-namespace QyWeChat\Core;
+namespace QyWechat\Core;
 
 use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Cache\FilesystemCache;
-use QyWeChat\Core\Exceptions\HttpException;
+use QyWechat\Core\Exceptions\HttpException;
 
 /**
  * Class AccessToken.
@@ -54,7 +54,10 @@ class AccessToken
      */
     protected $prefix = 'qywechat.common.access_token.';
 
-    // API
+    /**
+     * get token API UTL
+     * @var string
+     */
     const API_TOKEN_GET = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken';
 
     /**
@@ -164,7 +167,7 @@ class AccessToken
 
     /**
      * Get the access token from WeChat server.
-     * @throws \QyWeChat\Core\Exceptions\HttpException
+     * @throws \QyWechat\Core\Exceptions\HttpException
      * @return array|bool
      */
     public function getTokenFromServer()
@@ -187,7 +190,7 @@ class AccessToken
 
     /**
      * Return the http instance.
-     * @return \QyWeChat\Core\Http
+     * @return \QyWechat\Core\Http
      */
     public function getHttp()
     {
@@ -196,7 +199,7 @@ class AccessToken
 
     /**
      * Set the http instance.
-     * @param \QyWeChat\Core\Http $http
+     * @param \QyWechat\Core\Http $http
      * @return $this
      */
     public function setHttp(Http $http)

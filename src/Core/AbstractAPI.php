@@ -6,11 +6,11 @@
  * Date: 16-9-9
  * Time: 上午12:19
  */
-namespace QyWeChat\Core;
+namespace QyWechat\Core;
 
-use QyWeChat\Core\Exceptions\HttpException;
-use QyWeChat\Support\Collection;
-use QyWeChat\Support\Log;
+use QyWechat\Core\Exceptions\HttpException;
+use QyWechat\Support\Collection;
+use QyWechat\Support\Log;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface;
@@ -23,13 +23,13 @@ abstract class AbstractAPI
 {
     /**
      * Http instance.
-     * @var \QyWeChat\Core\Http
+     * @var \QyWechat\Core\Http
      */
     protected $http;
 
     /**
      * The request token.
-     * @var \QyWeChat\Core\AccessToken
+     * @var \QyWechat\Core\AccessToken
      */
     protected $accessToken;
 
@@ -39,7 +39,7 @@ abstract class AbstractAPI
 
     /**
      * Constructor.
-     * @param \QyWeChat\Core\AccessToken $accessToken
+     * @param \QyWechat\Core\AccessToken $accessToken
      */
     public function __construct(AccessToken $accessToken)
     {
@@ -48,7 +48,7 @@ abstract class AbstractAPI
 
     /**
      * Return the http instance.
-     * @return \QyWeChat\Core\Http
+     * @return \QyWechat\Core\Http
      */
     public function getHttp()
     {
@@ -65,7 +65,7 @@ abstract class AbstractAPI
 
     /**
      * Set the http instance.
-     * @param \QyWeChat\Core\Http $http
+     * @param \QyWechat\Core\Http $http
      * @return $this
      */
     public function setHttp(Http $http)
@@ -77,7 +77,7 @@ abstract class AbstractAPI
 
     /**
      * Return the current accessToken.
-     * @return \QyWeChat\Core\AccessToken
+     * @return \QyWechat\Core\AccessToken
      */
     public function getAccessToken()
     {
@@ -86,7 +86,7 @@ abstract class AbstractAPI
 
     /**
      * Set the request token.
-     * @param \QyWeChat\Core\AccessToken $accessToken
+     * @param \QyWechat\Core\AccessToken $accessToken
      * @return $this
      */
     public function setAccessToken(AccessToken $accessToken)
@@ -100,7 +100,7 @@ abstract class AbstractAPI
      * Parse JSON from response and check error.
      * @param string $method
      * @param array $args
-     * @return \QyWeChat\Support\Collection
+     * @return \QyWechat\Support\Collection
      */
     public function parseJSON($method, array $args)
     {
@@ -162,7 +162,7 @@ abstract class AbstractAPI
     /**
      * Check the array data errors, and Throw exception when the contents contains error.
      * @param array $contents
-     * @throws \QyWeChat\Core\Exceptions\HttpException
+     * @throws \QyWechat\Core\Exceptions\HttpException
      */
     protected function checkAndThrow(array $contents)
     {

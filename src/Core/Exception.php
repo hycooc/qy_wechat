@@ -6,7 +6,7 @@
  * Date: 2016/9/8
  * Time: 14:55
  */
-namespace QyWeChat\Core;
+namespace QyWechat\Core;
 
 use Exception as BaseException;
 

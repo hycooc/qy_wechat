@@ -6,10 +6,10 @@
  * Date: 2016/9/8
  * Time: 14:55
  */
-namespace QyWeChat\Core;
+namespace QyWechat\Core;
 
-use QyWeChat\Core\Exceptions\HttpException;
-use QyWeChat\Support\Log;
+use QyWechat\Core\Exceptions\HttpException;
+use QyWechat\Support\Log;
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\HandlerStack;
 use Psr\Http\Message\ResponseInterface;
@@ -225,7 +225,7 @@ class Http
      *
      * @return mixed
      *
-     * @throws \QyWeChat\Core\Exceptions\HttpException
+     * @throws \QyWechat\Core\Exceptions\HttpException
      */
     public function parseJSON($body)
     {
