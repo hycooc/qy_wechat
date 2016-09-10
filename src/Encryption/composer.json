@@ -1,7 +1,7 @@
 {
-    "name": "QyWeChat/encryption",
-    "description": "encryption module for QyWeChat SDK.",
-    "keywords": ["QyWeChat", "qyweixin", "SDK", "encryption", "QyWeChat"],
+    "name": "QyWechat/encryption",
+    "description": "encryption module for QyWechat SDK.",
+    "keywords": ["QyWechat", "qyweixin", "SDK", "encryption", "QyWechat"],
     "license": "MIT",
     "authors": [
         {
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "QyWeChat\\Encryption\\": "."
+            "QyWechat\\Encryption\\": "."
         }
     },
     "minimum-stability":"dev",

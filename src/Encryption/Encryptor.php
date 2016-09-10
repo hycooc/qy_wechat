@@ -6,11 +6,11 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWeChat\Encryption;
+namespace QyWechat\Encryption;
 
-use QyWeChat\Core\Exceptions\InvalidConfigException;
-use QyWeChat\Core\Exceptions\RuntimeException;
-use QyWeChat\Support\XML;
+use QyWechat\Core\Exceptions\InvalidConfigException;
+use QyWechat\Core\Exceptions\RuntimeException;
+use QyWechat\Support\XML;
 use Exception as BaseException;
 
 /**
