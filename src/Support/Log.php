@@ -28,9 +28,9 @@ class Log
      * Return the logger instance.
      * @return \Psr\Log\LoggerInterface
      */
-    public static function getLogger()
+    public static function getLogger(Logger $logger = null)
     {
-        return self::$logger ? : self::$logger = self::createDefaultLogger();
+        return self::$logger ? : ($logger ? self::$logger = $logger : self::$logger = self::createDefaultLogger());
     }
 
     /**
