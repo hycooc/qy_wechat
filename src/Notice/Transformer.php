@@ -19,7 +19,9 @@ class Transformer
 {
     /**
      * transform message to XML.
+     *
      * @param array|string|AbstractMessage $message
+     *
      * @return array
      */
     public function transform($message)
@@ -41,6 +43,38 @@ class Transformer
 
     /**
      * @param AbstractMessage $message
+     *
+     * @return array
+     */
+    public function transformFile(AbstractMessage $message)
+    {
+        return [
+            'file' => [
+                'media_id' => $message->get('media_id')
+            ]
+        ];
+    }
+
+    /**
+     * @param AbstractMessage $message
+     *
+     * @return array
+     */
+    public function transformTextCard(AbstractMessage $message)
+    {
+        return [
+            'textcard' => [
+                'title'       => $message->get('title'),
+                'description' => $message->get('description'),
+                'url'         => $message->get('url'),
+                'btntxt'      => $message->get('btntxt'),
+            ]
+        ];
+    }
+
+    /**
+     * @param AbstractMessage $message
+     *
      * @return array
      */
     public function transformText(AbstractMessage $message)
@@ -54,6 +88,7 @@ class Transformer
 
     /**
      * @param AbstractMessage $message
+     *
      * @return array
      */
     public function transformImage(AbstractMessage $message)
@@ -67,14 +102,15 @@ class Transformer
 
     /**
      * @param AbstractMessage $message
+     *
      * @return array
      */
     public function transformVideo(AbstractMessage $message)
     {
         $response = [
             'video' => [
-                'media_id' => $message->get('media_id'),
-                'title' => $message->get('title'),
+                'media_id'    => $message->get('media_id'),
+                'title'       => $message->get('title'),
                 'description' => $message->get('description'),
             ],
         ];
@@ -84,6 +120,7 @@ class Transformer
 
     /**
      * @param AbstractMessage $message
+     *
      * @return array
      */
     public function transformVoice(AbstractMessage $message)
@@ -97,23 +134,25 @@ class Transformer
 
     /**
      * Transform news message.
+     *
      * @param array|\QyWechat\Message\News $news
+     *
      * @return array
      */
     public function transformNews($news)
     {
         $articles = [];
 
-        if (!is_array($news)) {
+        if ( !is_array($news)) {
             $news = [$news];
         }
 
         foreach ($news as $item) {
             $articles[] = [
-                'title' => $item->get('title'),
+                'title'       => $item->get('title'),
                 'description' => $item->get('description'),
-                'url' => $item->get('url'),
-                'picurl' => $item->get('pic_url'),
+                'url'         => $item->get('url'),
+                'picurl'      => $item->get('pic_url'),
             ];
         }
 

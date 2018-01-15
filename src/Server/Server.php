@@ -165,7 +165,7 @@ class Server
      * @param callable $callback
      * @param int      $option
      *
-     * @return Guard
+     * @return Server
      *
      * @throws InvalidArgumentException
      */
@@ -196,7 +196,7 @@ class Server
      *
      * @param Encryptor $encryptor
      *
-     * @return Guard
+     * @return Server
      */
     public function setEncryptor(Encryptor $encryptor)
     {

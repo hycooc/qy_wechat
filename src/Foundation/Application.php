@@ -17,6 +17,17 @@ use QyWechat\Core\Http;
 use QyWechat\Support\Log;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class Application
+ *
+ * @property \QyWechat\Core\AccessToken $access_token
+ * @property \QyWechat\Encryption\Encryptor $encryptor
+ * @property \QyWechat\Server\Server $server
+ * @property \QyWechat\Notice\Notice $notice
+ *
+ * @package QyWechat\Foundation
+ * @Author: baoerge123@163.com
+ */
 class Application extends Container
 {
     //服务集合
@@ -27,6 +38,7 @@ class Application extends Container
 
     /**
      * 构造方法
+     *
      * @param array $config
      */
     public function __construct($config)
@@ -44,7 +56,7 @@ class Application extends Container
             error_reporting(E_ALL);
         }
 
-        //注册provideers
+        //注册providers
         $this->registerProviders();
 
         //注册基础providers
@@ -65,7 +77,9 @@ class Application extends Container
 
     /**
      * 添加 provider.
+     *
      * @param $provider
+     *
      * @return $this
      */
     public function addProvider($provider)
@@ -77,6 +91,7 @@ class Application extends Container
 
     /**
      * 设置provider
+     *
      * @param array $providers
      */
     public function setProviders(array $providers)
@@ -90,6 +105,7 @@ class Application extends Container
 
     /**
      * 获取所有provider
+     *
      * @return array
      */
     public function getProviders()
@@ -154,7 +170,7 @@ class Application extends Container
 
         $logger = new Logger('QyWechat');
 
-        if (!$this['config']['debug'] || defined('PHPUNIT_RUNNING')) {
+        if ( !$this['config']['debug'] || defined('PHPUNIT_RUNNING')) {
             $logger->pushHandler(new NullHandler());
         } elseif ($logFile = $this['config']['log.file']) {
             $logger->pushHandler(new StreamHandler($logFile, $this['config']->get('log.level', Logger::WARNING)));
