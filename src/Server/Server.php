@@ -84,11 +84,12 @@ class Server
     protected $debug = false;
 
     /**
-     * Constructor.
+     * Server constructor.
      *
-     * @param Request $request
+     * @param string $accessToken
+     * @param Request|null $request
      */
-    public function __construct(Request $request = null)
+    public function __construct($accessToken = '', Request $request = null)
     {
         $this->request = $request ?: Request::createFromGlobals();
     }
@@ -400,7 +401,14 @@ class Server
                 $content
             );
         } else {
-            $message = XML::parse($content);
+//            $message = XML::parse($content);
+
+            $message = $this->encryptor->decryptMsg(
+                $this->request->get('msg_signature'),
+                $this->request->get('nonce'),
+                $this->request->get('timestamp'),
+                $content
+            );
         }
 
         return $message;

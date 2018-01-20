@@ -15,12 +15,12 @@ class TextCard extends AbstractMessage
      *
      * @var string
      */
-    protected $type = 'news';
+    protected $type = 'textcard';
 
     /**
      * Properties.
      *
      * @var array
      */
-    protected $properties = ['title', 'description', 'url', 'btntxt',];
+    protected $properties = ['title', 'description', 'url', 'btntxt'];
 }
