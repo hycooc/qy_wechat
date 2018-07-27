@@ -33,7 +33,7 @@ class AccessToken
     protected $corpsecret;
 
     /**
-     * Cache.
+     * Cache. 缓存
      *
      * @var Cache
      */
