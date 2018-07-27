@@ -6,11 +6,11 @@
  * Date: 16-9-9
  * Time: 上午12:19
  */
-namespace QyWechat\Core;
+namespace Hycooc\QyWechat\Core;
 
-use QyWechat\Core\Exceptions\HttpException;
-use QyWechat\Support\Collection;
-use QyWechat\Support\Log;
+use Hycooc\QyWechat\Core\Exceptions\HttpException;
+use Hycooc\QyWechat\Support\Collection;
+use Hycooc\QyWechat\Support\Log;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface;
@@ -23,13 +23,13 @@ abstract class AbstractAPI
 {
     /**
      * Http instance.
-     * @var \QyWechat\Core\Http
+     * @var \Hycooc\QyWechat\Core\Http
      */
     protected $http;
 
     /**
      * The request token.
-     * @var \QyWechat\Core\AccessToken
+     * @var \Hycooc\QyWechat\Core\AccessToken
      */
     protected $accessToken;
 
@@ -39,7 +39,7 @@ abstract class AbstractAPI
 
     /**
      * Constructor.
-     * @param \QyWechat\Core\AccessToken $accessToken
+     * @param \Hycooc\QyWechat\Core\AccessToken $accessToken
      */
     public function __construct(AccessToken $accessToken)
     {
@@ -48,7 +48,7 @@ abstract class AbstractAPI
 
     /**
      * Return the http instance.
-     * @return \QyWechat\Core\Http
+     * @return \Hycooc\QyWechat\Core\Http
      */
     public function getHttp()
     {
@@ -65,7 +65,7 @@ abstract class AbstractAPI
 
     /**
      * Set the http instance.
-     * @param \QyWechat\Core\Http $http
+     * @param \Hycooc\QyWechat\Core\Http $http
      * @return $this
      */
     public function setHttp(Http $http)
@@ -77,7 +77,7 @@ abstract class AbstractAPI
 
     /**
      * Return the current accessToken.
-     * @return \QyWechat\Core\AccessToken
+     * @return \Hycooc\QyWechat\Core\AccessToken
      */
     public function getAccessToken()
     {
@@ -86,7 +86,7 @@ abstract class AbstractAPI
 
     /**
      * Set the request token.
-     * @param \QyWechat\Core\AccessToken $accessToken
+     * @param \Hycooc\QyWechat\Core\AccessToken $accessToken
      * @return $this
      */
     public function setAccessToken(AccessToken $accessToken)
@@ -100,7 +100,7 @@ abstract class AbstractAPI
      * Parse JSON from response and check error.
      * @param string $method
      * @param array $args
-     * @return \QyWechat\Support\Collection
+     * @return \Hycooc\QyWechat\Support\Collection
      */
     public function parseJSON($method, array $args)
     {
@@ -162,7 +162,7 @@ abstract class AbstractAPI
     /**
      * Check the array data errors, and Throw exception when the contents contains error.
      * @param array $contents
-     * @throws \QyWechat\Core\Exceptions\HttpException
+     * @throws \Hycooc\QyWechat\Core\Exceptions\HttpException
      */
     protected function checkAndThrow(array $contents)
     {

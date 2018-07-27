@@ -6,9 +6,9 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWechat\Support;
+namespace Hycooc\QyWechat\Support;
 
-use QyWechat\Core\Exceptions\InvalidArgumentException;
+use Hycooc\QyWechat\Core\Exceptions\InvalidArgumentException;
 
 /**
  * Class Attributes.
@@ -82,7 +82,7 @@ abstract class Attribute extends Collection
      *
      * @return Attribute
      *
-     * @throws \QyWechat\Core\Exceptions\InvalidArgumentException
+     * @throws \Hycooc\QyWechat\Core\Exceptions\InvalidArgumentException
      */
     public function with($attribute, $value)
     {

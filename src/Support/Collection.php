@@ -5,7 +5,7 @@
  * Date: 2016/9/8
  * Time: 14:56
  */
-namespace QyWechat\Support;
+namespace Hycooc\QyWechat\Support;
 
 use ArrayAccess;
 use ArrayIterator;

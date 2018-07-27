@@ -5,12 +5,12 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWechat\Foundation\ServiceProviders;
+namespace Hycooc\QyWechat\Foundation\ServiceProviders;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use QyWechat\Encryption\Encryptor;
-use QyWechat\Server\Server;
+use Hycooc\QyWechat\Encryption\Encryptor;
+use Hycooc\QyWechat\Server\Server;
 
 class ServerServiceProvider implements ServiceProviderInterface
 {

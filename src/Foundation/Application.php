@@ -5,27 +5,27 @@
  * Date: 2016/9/8
  * Time: 14:55
  */
-namespace QyWechat\Foundation;
+namespace Hycooc\QyWechat\Foundation;
 
 use Doctrine\Common\Cache\FilesystemCache;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Pimple\Container;
-use QyWechat\Core\AccessToken;
-use QyWechat\Core\Http;
-use QyWechat\Support\Log;
+use Hycooc\QyWechat\Core\AccessToken;
+use Hycooc\QyWechat\Core\Http;
+use Hycooc\QyWechat\Support\Log;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class Application
  *
- * @property \QyWechat\Core\AccessToken $access_token
- * @property \QyWechat\Encryption\Encryptor $encryptor
- * @property \QyWechat\Server\Server $server
- * @property \QyWechat\Notice\Notice $notice
+ * @property \Hycooc\QyWechat\Core\AccessToken $access_token
+ * @property \Hycooc\QyWechat\Encryption\Encryptor $encryptor
+ * @property \Hycooc\QyWechat\Server\Server $server
+ * @property \Hycooc\QyWechat\Notice\Notice $notice
  *
- * @package QyWechat\Foundation
+ * @package Hycooc\QyWechat\Foundation
  * @Author: baoerge123@163.com
  */
 class Application extends Container

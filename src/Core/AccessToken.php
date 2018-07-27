@@ -7,11 +7,11 @@
  * Time: 14:55
  */
 
-namespace QyWechat\Core;
+namespace Hycooc\QyWechat\Core;
 
 use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Cache\FilesystemCache;
-use QyWechat\Core\Exceptions\HttpException;
+use Hycooc\QyWechat\Core\Exceptions\HttpException;
 
 /**
  * Class AccessToken.
@@ -196,7 +196,7 @@ class AccessToken
     /**
      * Get the access token from WeChat server.
      *
-     * @throws \QyWechat\Core\Exceptions\HttpException
+     * @throws \Hycooc\QyWechat\Core\Exceptions\HttpException
      * @return array|bool
      */
     public function getTokenFromServer()
@@ -220,7 +220,7 @@ class AccessToken
     /**
      * Return the http instance.
      *
-     * @return \QyWechat\Core\Http
+     * @return \Hycooc\QyWechat\Core\Http
      */
     public function getHttp()
     {
@@ -230,7 +230,7 @@ class AccessToken
     /**
      * Set the http instance.
      *
-     * @param \QyWechat\Core\Http $http
+     * @param \Hycooc\QyWechat\Core\Http $http
      *
      * @return $this
      */

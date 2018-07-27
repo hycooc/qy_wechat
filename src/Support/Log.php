@@ -6,7 +6,7 @@
  * Date: 2016/9/8
  * Time: 14:55
  */
-namespace QyWechat\Support;
+namespace Hycooc\QyWechat\Support;
 
 use Monolog\Handler\ErrorLogHandler;
 use Monolog\Handler\NullHandler;

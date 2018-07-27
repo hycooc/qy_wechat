@@ -6,9 +6,9 @@
  * Date: 2016/9/8
  * Time: 14:55
  */
-namespace QyWechat\Core\Exceptions;
+namespace Hycooc\QyWechat\Core\Exceptions;
 
-use QyWechat\Core\Exception;
+use Hycooc\QyWechat\Core\Exception;
 
 /**
  * Class RuntimeException.

@@ -6,11 +6,11 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWechat\Notice;
+namespace Hycooc\QyWechat\Notice;
 
-use QyWechat\Message\AbstractMessage;
-use QyWechat\Message\News;
-use QyWechat\Message\Text;
+use Hycooc\QyWechat\Message\AbstractMessage;
+use Hycooc\QyWechat\Message\News;
+use Hycooc\QyWechat\Message\Text;
 
 /**
  * Class Transformer.
@@ -36,7 +36,7 @@ class Transformer
             $class = get_class($message);
         }
 
-        $handle = 'transform' . substr($class, strlen('QyWechat\Message\\'));
+        $handle = 'transform' . substr($class, strlen('Hycooc\QyWechat\Message\\'));
 
         return method_exists($this, $handle) ? $this->$handle($message) : [];
     }
@@ -135,7 +135,7 @@ class Transformer
     /**
      * Transform news message.
      *
-     * @param array|\QyWechat\Message\News $news
+     * @param array|\Hycooc\QyWechat\Message\News $news
      *
      * @return array
      */

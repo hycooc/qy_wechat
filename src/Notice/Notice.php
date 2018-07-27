@@ -5,9 +5,9 @@
  * Date: 16-9-9
  * Time: 上午2:35
  */
-namespace QyWechat\Notice;
+namespace Hycooc\QyWechat\Notice;
 
-use QyWechat\Core\AbstractAPI;
+use Hycooc\QyWechat\Core\AbstractAPI;
 
 class Notice extends AbstractAPI
 {
@@ -19,11 +19,11 @@ class Notice extends AbstractAPI
     /**
      * Get message builder.
      *
-     * @param \QyWechat\Message\AbstractMessage|string $message
+     * @param \Hycooc\QyWechat\Message\AbstractMessage|string $message
      *
-     * @return \QyWechat\Notice\MessageBuilder
+     * @return \Hycooc\QyWechat\Notice\MessageBuilder
      *
-     * @throws \QyWechat\Core\Exceptions\InvalidArgumentException
+     * @throws \Hycooc\QyWechat\Core\Exceptions\InvalidArgumentException
      */
     public function message($message)
     {

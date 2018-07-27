@@ -6,13 +6,13 @@
  * Date: 16-9-9
  * Time: 上午2:35
  */
-namespace QyWechat\Notice;
+namespace Hycooc\QyWechat\Notice;
 
-use QyWechat\Core\Exceptions\InvalidArgumentException;
-use QyWechat\Core\Exceptions\RuntimeException;
-use QyWechat\Message\AbstractMessage;
-use QyWechat\Message\Raw as RawMessage;
-use QyWechat\Message\Text;
+use Hycooc\QyWechat\Core\Exceptions\InvalidArgumentException;
+use Hycooc\QyWechat\Core\Exceptions\RuntimeException;
+use Hycooc\QyWechat\Message\AbstractMessage;
+use Hycooc\QyWechat\Message\Raw as RawMessage;
+use Hycooc\QyWechat\Message\Text;
 
 /**
  * Class MessageBuilder.
@@ -21,7 +21,7 @@ class MessageBuilder
 {
     /**
      * Message to send.
-     * @var \QyWechat\Message\AbstractMessage;
+     * @var \Hycooc\QyWechat\Message\AbstractMessage;
      */
     protected $message;
 
@@ -51,13 +51,13 @@ class MessageBuilder
 
     /**
      * Staff instance.
-     * @var \QyWechat\Notice\Notice
+     * @var \Hycooc\QyWechat\Notice\Notice
      */
     protected $notice;
 
     /**
      * MessageBuilder constructor.
-     * @param \QyWechat\Notice\Notice $notice
+     * @param \Hycooc\QyWechat\Notice\Notice $notice
      */
     public function __construct(Notice $notice)
     {

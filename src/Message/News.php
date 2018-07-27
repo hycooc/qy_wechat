@@ -6,7 +6,7 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWechat\Message;
+namespace Hycooc\QyWechat\Message;
 
 /**
  * Class News.

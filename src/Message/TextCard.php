@@ -6,7 +6,7 @@
  * Date: 2018/1/15
  * Time: 下午10:20
  */
-namespace QyWechat\Message;
+namespace Hycooc\QyWechat\Message;
 
 class TextCard extends AbstractMessage
 {

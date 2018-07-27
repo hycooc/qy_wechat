@@ -5,7 +5,7 @@
  * Date: 2016/9/10
  * Time: 11:48
  */
-namespace QyWechat\Message;
+namespace Hycooc\QyWechat\Message;
 
 class Video extends AbstractMessage
 {

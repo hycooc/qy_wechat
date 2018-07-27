@@ -6,7 +6,7 @@
  * Date: 2018/1/15
  * Time: 下午10:05
  */
-namespace QyWechat\Message;
+namespace Hycooc\QyWechat\Message;
 
 /**
  * Class File

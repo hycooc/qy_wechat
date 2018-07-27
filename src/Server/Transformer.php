@@ -6,11 +6,11 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWechat\Server;
+namespace Hycooc\QyWechat\Server;
 
-use QyWechat\Message\AbstractMessage;
-use QyWechat\Message\News;
-use QyWechat\Message\Text;
+use Hycooc\QyWechat\Message\AbstractMessage;
+use Hycooc\QyWechat\Message\News;
+use Hycooc\QyWechat\Message\Text;
 
 /**
  * Class Transformer.
@@ -41,6 +41,8 @@ class Transformer
 
     /**
      * Transform text message.
+     *
+     * @param AbstractMessage $message
      * @return array
      */
     public function transformText(AbstractMessage $message)
@@ -52,6 +54,8 @@ class Transformer
 
     /**
      * Transform image message.
+     *
+     * @param AbstractMessage $message
      * @return array
      */
     public function transformImage(AbstractMessage $message)
@@ -65,6 +69,8 @@ class Transformer
 
     /**
      * Transform video message.
+     *
+     * @param AbstractMessage $message
      * @return array
      */
     public function transformVideo(AbstractMessage $message)
@@ -82,6 +88,8 @@ class Transformer
 
     /**
      * Transform voice message.
+     *
+     * @param AbstractMessage $message
      * @return array
      */
     public function transformVoice(AbstractMessage $message)
@@ -95,6 +103,8 @@ class Transformer
 
     /**
      * Transform transfer message.
+     *
+     * @param AbstractMessage $message
      * @return array
      */
     public function transformTransfer(AbstractMessage $message)
@@ -113,7 +123,7 @@ class Transformer
 
     /**
      * Transform news message.
-     * @param array|\QyWechat\Message\News $news
+     * @param array|\Hycooc\QyWechat\Message\News $news
      * @return array
      */
     public function transformNews($news)

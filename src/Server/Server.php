@@ -5,18 +5,18 @@
  * Date: 16-9-9
  * Time: 上午12:19
  */
-namespace QyWechat\Server;
+namespace Hycooc\QyWechat\Server;
 
-use QyWechat\Core\Exceptions\FaultException;
-use QyWechat\Core\Exceptions\InvalidArgumentException;
-use QyWechat\Core\Exceptions\RuntimeException;
-use QyWechat\Encryption\Encryptor;
-use QyWechat\Message\AbstractMessage;
-use QyWechat\Message\Raw as RawMessage;
-use QyWechat\Message\Text;
-use QyWechat\Support\Collection;
-use QyWechat\Support\Log;
-use QyWechat\Support\XML;
+use Hycooc\QyWechat\Core\Exceptions\FaultException;
+use Hycooc\QyWechat\Core\Exceptions\InvalidArgumentException;
+use Hycooc\QyWechat\Core\Exceptions\RuntimeException;
+use Hycooc\QyWechat\Encryption\Encryptor;
+use Hycooc\QyWechat\Message\AbstractMessage;
+use Hycooc\QyWechat\Message\Raw as RawMessage;
+use Hycooc\QyWechat\Message\Text;
+use Hycooc\QyWechat\Support\Collection;
+use Hycooc\QyWechat\Support\Log;
+use Hycooc\QyWechat\Support\XML;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -225,7 +225,7 @@ class Server
      *
      * @return string
      *
-     * @throws \QyWechat\Core\Exceptions\InvalidArgumentException
+     * @throws \Hycooc\QyWechat\Core\Exceptions\InvalidArgumentException
      */
     protected function buildResponse($to, $from, $message)
     {
@@ -286,8 +286,8 @@ class Server
      *
      * @return array
      *
-     * @throws \QyWechat\Core\Exceptions\RuntimeException
-     * @throws \QyWechat\Server\BadRequestException
+     * @throws \Hycooc\QyWechat\Core\Exceptions\RuntimeException
+     * @throws \Hycooc\QyWechat\Server\BadRequestException
      */
     protected function handleRequest()
     {
@@ -380,8 +380,8 @@ class Server
      *
      * @param string|resource $content
      *
-     * @throws \QyWechat\Core\Exceptions\RuntimeException
-     * @throws \QyWechat\Encryption\EncryptionException
+     * @throws \Hycooc\QyWechat\Core\Exceptions\RuntimeException
+     * @throws \Hycooc\QyWechat\Encryption\EncryptionException
      *
      * @return array
      */

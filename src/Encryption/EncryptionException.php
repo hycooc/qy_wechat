@@ -6,9 +6,9 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWechat\Encryption;
+namespace Hycooc\QyWechat\Encryption;
 
-use QyWechat\Core\Exception as CoreException;
+use Hycooc\QyWechat\Core\Exception as CoreException;
 
 /**
  * Class EncryptionException.

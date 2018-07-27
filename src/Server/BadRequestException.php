@@ -6,9 +6,9 @@
  * Date: 16-9-9
  * Time: 上午12:20
  */
-namespace QyWechat\Server;
+namespace Hycooc\QyWechat\Server;
 
-use QyWechat\Core\Exception;
+use Hycooc\QyWechat\Core\Exception;
 
 /**
  * Class BadRequestException.

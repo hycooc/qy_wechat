@@ -5,7 +5,7 @@
  * Date: 2016/9/10
  * Time: 11:46
  */
-namespace QyWechat\Message;
+namespace Hycooc\QyWechat\Message;
 
 class Voice extends AbstractMessage
 {

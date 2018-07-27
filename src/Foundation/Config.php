@@ -6,9 +6,9 @@
  * Time: 14:55
  */
 
-namespace QyWechat\Foundation;
+namespace Hycooc\QyWechat\Foundation;
 
-use QyWechat\Support\Collection;
+use Hycooc\QyWechat\Support\Collection;
 
 class Config extends Collection
 {

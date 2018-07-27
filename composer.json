@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "QyWechat\\": "src/"
+            "Hycooc\\QyWechat\\": "src/"
         },
         "files": [
         ]
