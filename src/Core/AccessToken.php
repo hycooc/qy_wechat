@@ -20,67 +20,86 @@ class AccessToken
 {
     /**
      * 企业Id
+     *
      * @var string
      */
     protected $corpid;
 
     /**
      * 管理组的凭证密钥
+     *
      * @var string
      */
     protected $corpsecret;
 
     /**
      * Cache.
+     *
      * @var Cache
      */
     protected $cache;
 
     /**
      * Http instance.
+     *
      * @var Http
      */
     protected $http;
 
     /**
+     * Corp name
+     *
+     * @var
+     */
+    protected $corp = '';
+
+    /**
      * Query name.
+     *
      * @var string
      */
     protected $queryName = 'access_token';
 
     /**
      * Cache key prefix.
+     *
      * @var string
      */
     protected $prefix = 'qywechat.common.access_token.';
 
     /**
      * get token API UTL
+     *
      * @var string
      */
     const API_TOKEN_GET = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken';
 
     /**
      * Constructor.
+     *
      * @param string $corpid
      * @param string $corpsecret
+     * @param string $corp
      * @param \Doctrine\Common\Cache\Cache $cache
      */
-    public function __construct($corpid, $corpsecret, Cache $cache = null)
+    public function __construct($corpid, $corpsecret, $corp, Cache $cache = null)
     {
-        $this->corpid  = $corpid;
+        $this->corpid     = $corpid;
         $this->corpsecret = $corpsecret;
-        $this->cache  = $cache;
+        $this->corp       = $corp;
+        $this->cache      = $cache;
     }
 
     /**
      * Get token from WeChat API.
+     *
      * @param bool $forceRefresh
+     *
      * @return string
      */
     public function getToken($forceRefresh = false)
     {
-        $cacheKey = $this->prefix . $this->corpid;
+        $cacheKey = $this->prefix . $this->corpid . $this->corp;
 
         $cached = $this->getCache()->fetch($cacheKey);
 
@@ -98,6 +117,7 @@ class AccessToken
 
     /**
      * Return the corpid.
+     *
      * @return string
      */
     public function getCorpid()
@@ -107,6 +127,7 @@ class AccessToken
 
     /**
      * Return the corpsecret.
+     *
      * @return string
      */
     public function getCorpsecret()
@@ -116,7 +137,9 @@ class AccessToken
 
     /**
      * Set cache instance.
+     *
      * @param \Doctrine\Common\Cache\Cache $cache
+     *
      * @return AccessToken
      */
     public function setCache(Cache $cache)
@@ -128,16 +151,19 @@ class AccessToken
 
     /**
      * Return the cache manager.
+     *
      * @return \Doctrine\Common\Cache\Cache
      */
     public function getCache()
     {
-        return $this->cache ? : $this->cache = new FilesystemCache(sys_get_temp_dir());
+        return $this->cache ?: $this->cache = new FilesystemCache(sys_get_temp_dir());
     }
 
     /**
      * Set the query name.
+     *
      * @param string $queryName
+     *
      * @return $this
      */
     public function setQueryName($queryName)
@@ -149,6 +175,7 @@ class AccessToken
 
     /**
      * Return the query name.
+     *
      * @return string
      */
     public function getQueryName()
@@ -158,6 +185,7 @@ class AccessToken
 
     /**
      * Return the API request queries.
+     *
      * @return array
      */
     public function getQueryFields()
@@ -167,14 +195,15 @@ class AccessToken
 
     /**
      * Get the access token from WeChat server.
+     *
      * @throws \QyWechat\Core\Exceptions\HttpException
      * @return array|bool
      */
     public function getTokenFromServer()
     {
         $params = [
-            'corpid'      => $this->corpid,
-            'corpsecret'     => $this->corpsecret,
+            'corpid'     => $this->corpid,
+            'corpsecret' => $this->corpsecret,
         ];
 
         $http = $this->getHttp();
@@ -190,16 +219,19 @@ class AccessToken
 
     /**
      * Return the http instance.
+     *
      * @return \QyWechat\Core\Http
      */
     public function getHttp()
     {
-        return $this->http ? : $this->http = new Http();
+        return $this->http ?: $this->http = new Http();
     }
 
     /**
      * Set the http instance.
+     *
      * @param \QyWechat\Core\Http $http
+     *
      * @return $this
      */
     public function setHttp(Http $http)

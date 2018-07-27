@@ -154,6 +154,7 @@ class Application extends Container
             return new AccessToken(
                 $this['config']['corpid'],
                 $this['config']['corpsecret'],
+                $this['config']['corp'],
                 $this['cache']
             );
         };
