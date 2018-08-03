@@ -64,7 +64,7 @@ class Http
      * GET request.
      *
      * @param string $url
-     * @param array  $options
+     * @param array $options
      *
      * @return array|bool
      *
@@ -78,7 +78,7 @@ class Http
     /**
      * POST request.
      *
-     * @param string       $url
+     * @param string $url
      * @param array|string $options
      *
      * @return array|bool
@@ -95,9 +95,9 @@ class Http
     /**
      * JSON request.
      *
-     * @param string       $url
+     * @param string $url
      * @param string|array $options
-     * @param int          $encodeOption
+     * @param int $encodeOption
      *
      * @return array|bool
      *
@@ -115,6 +115,7 @@ class Http
      * @param array $files
      * @param array $form
      * @param array $queries
+     *
      * @return array|bool
      */
     public function upload($url, array $files = [], array $form = [], array $queries = [])
@@ -123,7 +124,7 @@ class Http
 
         foreach ($files as $name => $path) {
             $multipart[] = [
-                'name' => $name,
+                'name'     => $name,
                 'contents' => fopen($path, 'r'),
             ];
         }
@@ -156,7 +157,7 @@ class Http
      */
     public function getClient()
     {
-        if (!($this->client instanceof HttpClient)) {
+        if ( !($this->client instanceof HttpClient)) {
             $this->client = new HttpClient();
         }
 
@@ -192,7 +193,7 @@ class Http
      *
      * @param string $url
      * @param string $method
-     * @param array  $options
+     * @param array $options
      *
      * @return array|bool
      *
@@ -211,10 +212,10 @@ class Http
         $response = $this->getClient()->request($method, $url, $options);
 
         Log::debug('API response:', [
-            'Status' => $response->getStatusCode(),
-            'Reason' => $response->getReasonPhrase(),
+            'Status'  => $response->getStatusCode(),
+            'Reason'  => $response->getReasonPhrase(),
             'Headers' => $response->getHeaders(),
-            'Body' => strval($response->getBody()),
+            'Body'    => strval($response->getBody()),
         ]);
 
         return $response;
@@ -245,7 +246,7 @@ class Http
         Log::debug('API response decoded:', compact('contents'));
 
         if (JSON_ERROR_NONE !== json_last_error()) {
-            throw new HttpException('Failed to parse JSON: '.json_last_error_msg());
+            throw new HttpException('Failed to parse JSON: ' . json_last_error_msg());
         }
 
         return $contents;
